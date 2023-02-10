@@ -24,10 +24,10 @@ app.get("/contact",(req,res)=>{
 app.get("/compose",(req,res)=>{
     res.render('compose');
 })
-app.get("/:id",(req,res)=>{
-    let userid=req.params.id;
-    const findUser=posts.find(c=>c.id===userid);
-     res.render('post',{ findUser});
+app.get("/:title",(req,res)=>{
+    let titlepara=req.params.title;
+    const findUser=posts.find(c=>c.title===titlepara);
+    res.render('post',{title:findUser.title,body:findUser.body});
  
 })
 app.post('/',(req,res)=>{

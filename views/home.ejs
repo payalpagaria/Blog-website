@@ -3,7 +3,8 @@
 <h1>Home</h1>
 <p><%=homecontent%></p>
 <% for(let i=0;i<Posts.length;i++){%>
+    
       <h1><%=Posts[i].title%></h1>
-         <p><%=Posts[i].body%></p>
+         <p><%=Posts[i].body.substring(0, 100) + "..."%> <a href="/<%=Posts[i].id%>">Read More</a></p>
     <%}%>
 <%- include('partials/footer'); -%>

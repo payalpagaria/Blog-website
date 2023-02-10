@@ -24,9 +24,9 @@ app.get("/contact",(req,res)=>{
 app.get("/compose",(req,res)=>{
     res.render('compose');
 })
-app.get("/:title",(req,res)=>{
-    let titlepara=req.params.title;
-    const findUser=posts.find(c=>c.title===titlepara);
+app.get("/:id",(req,res)=>{
+    let useid=req.params.id;
+    const findUser=posts.find(c=>c.id===useid);
     res.render('post',{title:findUser.title,body:findUser.body});
  
 })
